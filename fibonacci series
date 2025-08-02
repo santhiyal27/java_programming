@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int m = scan.nextInt();
+
+        // Check constraints
+        if (n < 1 || n > 20 || m < 1 || m > 20 || n > m) {
+            System.out.println("Invalid Input");
+            return;
+        }
+
+        int a = 0, b = 1, sum = 0;
+
+        for (int i = 1; i <= m; i++) {
+            int fib;
+
+            if (i == 1) {
+                fib = a;
+            } else if(i == 2) {
+                fib = b;
+            } else {
+                fib = a + b;
+                a = b;
+                b = fib;
+            }
+
+            if (i >= n) {
+                sum += fib;
+            }
+        }
+
+        System.out.println("The Sum of Fibonacci value is " + (sum * 1.0));
+    }
+}
+
