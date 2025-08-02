@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+         int m=scan.nextInt();
+         int sum=0;
+        if(n>m || n<0 ||n>30||m>30||m<0 ){
+             System.out.print("Invalid Input");
+        }else{
+       for(int i=n;i<=m;i++){
+           if(i%2==0 ){
+                sum=sum+i;
+               }
+         }
+        System.out.print(sum);
+    }}
+}
